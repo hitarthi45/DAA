@@ -1,10 +1,12 @@
 def knapsack(wt, profit, gain, n, product, capacity):
     for i in range (n):
+       #0/1 part
         if(wt[i] <= capacity):
             product[i] = 1
             gain += profit[i]
             capacity -= wt[i]
         
+         #fractional part
         else:
             frac = capacity / wt[i]
             capacity = 0
